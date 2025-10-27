@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Contrato de servicios de fotografía y video para XV años de Valentina Díaz Pérez">
+    <meta name="author" content="Producciones Foro 7">
+    <title>Contrato de Servicios - Valentina Díaz Pérez</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contract-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        .contract-header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 30px;
+        }
+        .contract-section {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+        }
+        .contract-section.highlight {
+            background: #fff5e6;
+            border-left-color: #ff9800;
+        }
+        .party-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        @media (max-width: 768px) {
+            .party-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        .party {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+        .package-list {
+            list-style: none;
+            padding: 0;
+        }
+        .package-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .payment-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+        .payment-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        .payment-table .amount {
+            text-align: right;
+            font-weight: 600;
+        }
+        .payment-table .total-row {
+            background: #667eea;
+            color: white;
+            font-size: 1.2em;
+        }
+        .payment-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .payment-status {
+            color: #666;
+            font-style: italic;
+        }
+        .payment-status.paid {
+            color: #4caf50;
+            font-weight: 600;
+        }
+        .signatures {
+            margin-top: 50px;
+            padding: 30px 20px;
+        }
+        .signature-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .signature-boxes {
+                grid-template-columns: 1fr;
+            }
+        }
+        .signature-box {
+            text-align: center;
+        }
+        .signature-line {
+            height: 60px;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+        }
+        .contract-footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            margin-top: 50px;
+        }
+        .back-button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .back-button:hover {
+            background: #764ba2;
+        }
+        .package-option {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+        .package-option h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .extras-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="contract-header">
+            <h1>CONTRATO DE SERVICIOS</h1>
+            <h2>Fotografía y Video para XV Años</h2>
+            <p>Valentina Díaz Pérez</p>
+        </header>
+
+        <div class="contract-content">
+            <!-- Partes del Contrato -->
+            <section class="contract-section">
+                <h3>DATOS DE LAS PARTES</h3>
+                <div class="party-info">
+                    <div class="party">
+                        <h4>PRESTADOR DE SERVICIOS</h4>
+                        <p><strong>Nombre:</strong> Producciones Foro 7</p>
+                        <p><strong>WhatsApp:</strong> <a href="https://wa.me/524779203776">477 920 3776</a></p>
+                    </div>
+                    <div class="party">
+                        <h4>CONTRATANTE</h4>
+                        <p><strong>Nombre:</strong> Angel Díaz</p>
+                        <p><strong>Teléfono:</strong> +52 479 147 4309</p>
+                        <p><strong>Quinceañera:</strong> Valentina Díaz Pérez</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detalles del Evento -->
+            <section class="contract-section">
+                <h3>DETALLES DEL EVENTO</h3>
+                <div class="event-info">
+                    <p><strong>Tipo de Evento:</strong> XV Años</p>
+                    <p><strong>Quinceañera:</strong> Valentina Díaz Pérez</p>
+                    <p><strong>Fecha del Evento:</strong> Viernes, 19 de Diciembre de 2025</p>
+
+                    <div class="event-schedule">
+                        <h4>Itinerario:</h4>
+                        <ul>
+                            <li><strong>Sesión Previa - Detalles del Vestido</strong><br>
+                            Pendiente de confirmación (se confirmará cuando se reciba el vestido)</li>
+
+                            <li><strong>5:30 PM - Misa de Acción de Gracias</strong><br>
+                            Salón de Eventos<br>
+                            Hilario Medina 3848, Real Providencia, Retana, Guanajuato</li>
+
+                            <li><strong>Después de Misa - Recepción</strong><br>
+                            Mismo Salón<br>
+                            Hilario Medina 3848, Real Providencia, Retana, Guanajuato</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Familia -->
+            <section class="contract-section">
+                <h3>FAMILIA</h3>
+                <div class="family-info">
+                    <div class="family-group">
+                        <h4>Padres</h4>
+                        <p>Angel Díaz</p>
+                        <p>Claudia Pérez</p>
+                    </div>
+                    <div class="family-group">
+                        <h4>Padrinos</h4>
+                        <p>Martín Pérez</p>
+                        <p>Teresa Gutiérrez</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Paquete Contratado -->
+            <section class="contract-section highlight">
+                <h3>PAQUETE CONTRATADO</h3>
+                <div class="package-info">
+                    <h4>PAQUETE 1 DE FOTOGRAFÍA Y VIDEO - $6,000</h4>
+                    <p class="package-coverage"><strong>Cobertura:</strong> Sesión, misa y fiesta</p>
+                    <ul class="package-list">
+                        <li>✅ 100 Fotos del Evento Impresas en Tamaño 5x7 Pulgadas</li>
+                        <li>✅ 1 Película USB editada musicalizada y titulada 📹</li>
+                        <li>✅ 1 Videoclip para proyectar en el salón de la sesión previa y fotos del recuerdo</li>
+                        <li>✅ 1 Caja impresa para la USB</li>
+                        <li>✅ 1 Foto Ampliada a Tamaño 50x60 cm con marco</li>
+                        <li>✅ 1 Caja impresa para las Fotografías</li>
+                        <li>✅ 1 Sesión fotográfica antes del Evento o el Día del Evento</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">SERVICIOS ADICIONALES CONTRATADOS</h4>
+                    <ul class="package-list">
+                        <li>✅ Tomas de dron el día del evento: $1,700</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">OPCIONES DISPONIBLES</h4>
+                    <ul class="package-list">
+                        <li>📱 Invitaciones web con fotos de la sesión previa: $500 adicionales</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Paquetes Disponibles para Referencia -->
+            <section class="contract-section">
+                <h3>PAQUETES DISPONIBLES - REFERENCIA</h3>
+                <div class="packages-reference">
+
+                    <div class="package-option">
+                        <h4>PAQUETE DE FOTOGRAFÍA Y VIDEO A SÓLO $6,000 📹📸😃</h4>
+                        <p><strong>Cobertura:</strong> Sesión, misa y fiesta</p>
+                        <ul>
+                            <li>✅ 100 Fotos Del Evento Impresas En Tamaño 5X7 Pulgadas</li>
+                            <li>✅ 1 Película USB editada musicalizada y titulada 📹</li>
+                            <li>✅ 1 Videoclip para proyectar en el salón de la sesión previa y fotos del recuerdo</li>
+                            <li>✅ 1 Caja impresa para la usb</li>
+                            <li>✅ 1 Foto Ampliada A Tamaño 50x60 cm con marco</li>
+                            <li>✅ 1 Caja impresa para Las Fotografías</li>
+                            <li>✅ 1 Sesión fotografías antes Del Evento o el Día Del Evento</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-option">
+                        <h4>SUPER PAQUETE DE FOTOGRAFÍA Y VIDEO $8,500 📹📸😃</h4>
+                        <p><strong>Cobertura:</strong> Sesión, misa y fiesta</p>
+                        <ul>
+                            <li>✅ 200 Las Fotos Del Evento Impresas En Tamaño 5X7 Pulgadas o 1 fotolibro 30x60 de lujo con 100 fotos</li>
+                            <li>✅ 1 Película USB editada musicalizada y titulada 📹</li>
+                            <li>✅ 1 Videoclip para proyectar en el salón de la sesión previa y fotos del recuerdo</li>
+                            <li>✅ 1 Caja impresa para la usb</li>
+                            <li>✅ 1 Foto Ampliada A Tamaño 60x80 cm</li>
+                            <li>✅ 1 Caja De Madera Para Las Fotografías</li>
+                            <li>✅ 1 Sesión Fotográfica Antes y el día del Evento</li>
+                        </ul>
+                    </div>
+
+                    <div class="extras-info">
+                        <h4>Servicios Adicionales Disponibles</h4>
+                        <p><strong>Calidad a buen precio</strong></p>
+                        <p>Cualquier paquete puede contratar:</p>
+                        <ul>
+                            <li>📸 Tomas de dron por $1,700 adicionales</li>
+                            <li>🌐 Invitaciones web con fotos de la sesión previa por $800 adicionales</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Términos y Condiciones -->
+            <section class="contract-section">
+                <h3>TÉRMINOS Y CONDICIONES</h3>
+                <div class="terms">
+                    <ol>
+                        <li><strong>Duración del Servicio:</strong> La cobertura incluye sesión fotográfica previa (pendiente de confirmar), misa de acción de gracias, y recepción/fiesta.</li>
+
+                        <li><strong>Sesión Fotográfica Previa:</strong> Se realizará en fecha y lugar por confirmar una vez que se reciba el vestido.</li>
+
+                        <li><strong>Tomas con Dron:</strong> Se incluyen tomas aéreas con dron el día del evento, sujeto a condiciones climáticas favorables y permisos necesarios.</li>
+
+                        <li><strong>Entrega del Material:</strong> El material fotográfico y de video será entregado por paquetería a la dirección proporcionada por el contratante.</li>
+
+                        <li><strong>Tiempo de Entrega:</strong> El material editado será entregado en un plazo máximo de 30 días hábiles después del evento.</li>
+
+                        <li><strong>Materiales para Edición:</strong> El cliente proporcionará:
+                            <ul>
+                                <li>15 fotografías de la quinceañera (una por año)</li>
+                                <li>Un texto redactado de la quinceañera sobre el significado de sus quince años, agradecimientos y particularidades del evento</li>
+                                <li>Un texto de la mamá hacia ella</li>
+                                <li>Un texto del papá hacia ella</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Responsabilidad:</strong> El prestador de servicios se compromete a realizar el trabajo con profesionalismo y entregar material de alta calidad.</li>
+
+                        <li><strong>Derechos de Autor:</strong> El prestador conserva los derechos de autor del material, pero otorga al cliente el derecho de uso personal y familiar.</li>
+
+                        <li><strong>Calidad:</strong> Calidad a buen precio. Producciones Foro 7 garantiza servicios profesionales de fotografía y video.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Costos y Pagos -->
+            <section class="contract-section highlight">
+                <h3>COSTOS Y FORMA DE PAGO</h3>
+                <div class="payment-info">
+                    <table class="payment-table">
+                        <tr>
+                            <td>Paquete 1 de Fotografía y Video:</td>
+                            <td class="amount">$6,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tomas de dron (día del evento):</td>
+                            <td class="amount">$1,700.00</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL CONTRATADO:</strong></td>
+                            <td class="amount"><strong>$7,700.00</strong></td>
+                        </tr>
+                    </table>
+
+                    <div class="payment-schedule">
+                        <h4>Calendario de Pagos</h4>
+                        <div class="payment-item">
+                            <p><strong>Anticipo:</strong> $3,000.00</p>
+                            <p class="payment-status paid">✓ PAGADO - Apartado realizado</p>
+                        </div>
+                        <div class="payment-item">
+                            <p><strong>Saldo Restante:</strong> $4,700.00</p>
+                            <p class="payment-status">A pagar antes o el día del evento</p>
+                        </div>
+                    </div>
+
+                    <div class="payment-note" style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
+                        <h4>Opciones Adicionales Disponibles:</h4>
+                        <p>🌐 Invitaciones web con fotos de la sesión previa: <strong>$500 adicionales</strong></p>
+                        <p style="font-size: 0.9em; color: #666;">Se puede contratar después de la sesión previa</p>
+                    </div>
+
+                    <div class="payment-note" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <p><strong>Contacto WhatsApp:</strong> <a href="https://wa.me/524779203776">477 920 3776</a></p>
+                        <p>Producciones Foro 7</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cancelaciones -->
+            <section class="contract-section">
+                <h3>POLÍTICA DE CANCELACIONES</h3>
+                <div class="cancellation-policy">
+                    <ul>
+                        <li>El anticipo pagado es NO reembolsable en caso de cancelación por parte del cliente.</li>
+                        <li>Si el evento se pospone, el anticipo puede aplicarse a la nueva fecha, sujeto a disponibilidad del prestador.</li>
+                        <li>El prestador no se hace responsable por cancelaciones debido a causas de fuerza mayor.</li>
+                        <li>Las tomas de dron están sujetas a condiciones climáticas favorables. En caso de mal clima, se intentará realizar las tomas en otro momento del evento o se ajustará el costo según lo acordado.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Firmas -->
+            <section class="signatures">
+                <h3>ACEPTACIÓN DEL CONTRATO</h3>
+                <p class="signature-date">Fecha de emisión: 27 de octubre de 2025</p>
+                <div class="signature-boxes">
+                    <div class="signature-box">
+                        <div class="signature-line"></div>
+                        <p><strong>Producciones Foro 7</strong></p>
+                        <p>Prestador de Servicios</p>
+                    </div>
+                    <div class="signature-box">
+                        <div class="signature-line"></div>
+                        <p><strong>Angel Díaz</strong></p>
+                        <p>Contratante</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="back-button-container">
+            <a href="index.html" class="back-button">← Volver a la Invitación</a>
+        </div>
+
+        <footer class="contract-footer">
+            <p>Este contrato representa el acuerdo completo entre las partes</p>
+            <p>Retana, Guanajuato, México</p>
+            <p><strong>Producciones Foro 7</strong> - WhatsApp: 477 920 3776</p>
+        </footer>
+    </div>
+</body>
+</html>
