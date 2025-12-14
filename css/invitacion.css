@@ -1,0 +1,347 @@
+/* Reset y variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d4af37;
+    --secondary-color: #8b6f47;
+    --accent-color: #f5e6d3;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #faf8f5;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5e6d3 0%, #e8d4ba 100%);
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 10vw, 8rem);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    color: var(--primary-color);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.date {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: var(--secondary-color);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--secondary-color);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-20px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Invitation Message */
+.invitation-message {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.message-text {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Event Details */
+.event-details {
+    padding: 80px 20px;
+    background: var(--bg-light);
+}
+
+.event-details .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+}
+
+.detail-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.detail-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.venue-name {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.time {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.map-link {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border: 2px solid var(--secondary-color);
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.map-link:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Countdown */
+.countdown {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: white;
+    text-align: center;
+}
+
+.countdown .section-title {
+    color: white;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.number {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Dress Code */
+.dress-code {
+    padding: 80px 20px;
+    background: white;
+    text-align: center;
+}
+
+.dress-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.dress-note {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* RSVP */
+.rsvp {
+    padding: 80px 20px;
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.rsvp-text {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-light);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background: #1fb855;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-icon {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    padding: 60px 20px 40px;
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.footer-divider {
+    width: 100px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 30px auto;
+}
+
+.producer-info {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-details .container {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown-timer {
+        gap: 20px;
+    }
+
+    .time-unit {
+        min-width: 80px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out;
+}
