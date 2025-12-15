@@ -1,8 +1,8 @@
 // ========================================
 // GLOBAL VARIABLES
 // ========================================
-// Generate photo paths for 142 photos
-const photos = Array.from({length: 142}, (_, i) => `images/foto_${String(i + 1).padStart(3, '0')}.webp`);
+// Generate photo paths for 230 photos
+const photos = Array.from({length: 230}, (_, i) => `photos/photo_${String(i + 1).padStart(3, '0')}.webp`);
 
 // LIMITS FOR VALENTINA'S PACKAGE
 const LIMITS = {
@@ -764,8 +764,8 @@ function addPhotoFeedback() {
         return;
     }
 
-    if (photoNumber < 1 || photoNumber > 142) {
-        showToast('El número de foto debe estar entre 1 y 142', 'error');
+    if (photoNumber < 1 || photoNumber > 230) {
+        showToast('El número de foto debe estar entre 1 y 230', 'error');
         return;
     }
 
