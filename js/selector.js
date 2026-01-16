@@ -11,8 +11,9 @@ const photos = [
 
 // LIMITS FOR VALENTINA'S PACKAGE
 const LIMITS = {
-    impresion: 50,    // Máximo 50 fotos para impresión
-    ampliacion: 1     // Máximo 1 foto para ampliación
+    impresion: 100,    // Máximo 100 fotos para impresión
+    caja_usb: 1,       // 1 foto para caja USB
+    caja_fotos: 1      // 1 foto para caja de fotos
     // redes_sociales: sin límite
 };
 
@@ -63,18 +64,18 @@ function clearAllSelections() {
 // ========================================
 function getStats() {
     const stats = {
-        ampliacion: 0,
         impresion: 0,
-        invitacion: 0,
+        caja_usb: 0,
+        caja_fotos: 0,
         redes_sociales: 0,
         descartada: 0,
         sinClasificar: photos.length
     };
 
     Object.values(photoSelections).forEach(selection => {
-        if (selection.ampliacion) stats.ampliacion++;
         if (selection.impresion) stats.impresion++;
-        if (selection.invitacion) stats.invitacion++;
+        if (selection.caja_usb) stats.caja_usb++;
+        if (selection.caja_fotos) stats.caja_fotos++;
         if (selection.redes_sociales) stats.redes_sociales++;
         if (selection.descartada) stats.descartada++;
     });
@@ -88,29 +89,39 @@ function updateStats() {
     const stats = getStats();
 
     // Update counters
-    document.getElementById('countAmpliacion').textContent = stats.ampliacion;
     document.getElementById('countImpresion').textContent = stats.impresion;
+    document.getElementById('countCajaUsb').textContent = stats.caja_usb;
+    document.getElementById('countCajaFotos').textContent = stats.caja_fotos;
     document.getElementById('countRedesSociales').textContent = stats.redes_sociales;
     document.getElementById('countDescartada').textContent = stats.descartada;
     document.getElementById('countSinClasificar').textContent = stats.sinClasificar;
 
     // Add warning class if limits exceeded
-    const ampliacionCard = document.querySelector('.stat-card.ampliacion');
     const impresionCard = document.querySelector('.stat-card.impresion');
-
-    if (ampliacionCard) {
-        if (stats.ampliacion > LIMITS.ampliacion) {
-            ampliacionCard.classList.add('exceeded');
-        } else {
-            ampliacionCard.classList.remove('exceeded');
-        }
-    }
+    const cajaUsbCard = document.querySelector('.stat-card.caja-usb');
+    const cajaFotosCard = document.querySelector('.stat-card.caja-fotos');
 
     if (impresionCard) {
         if (stats.impresion > LIMITS.impresion) {
             impresionCard.classList.add('exceeded');
         } else {
             impresionCard.classList.remove('exceeded');
+        }
+    }
+
+    if (cajaUsbCard) {
+        if (stats.caja_usb > LIMITS.caja_usb) {
+            cajaUsbCard.classList.add('exceeded');
+        } else {
+            cajaUsbCard.classList.remove('exceeded');
+        }
+    }
+
+    if (cajaFotosCard) {
+        if (stats.caja_fotos > LIMITS.caja_fotos) {
+            cajaFotosCard.classList.add('exceeded');
+        } else {
+            cajaFotosCard.classList.remove('exceeded');
         }
     }
 }
@@ -124,7 +135,7 @@ function renderGallery() {
 
     photos.forEach((photo, index) => {
         const selection = photoSelections[index] || {};
-        const hasAny = selection.ampliacion || selection.impresion || selection.invitacion || selection.redes_sociales || selection.descartada;
+        const hasAny = selection.impresion || selection.caja_usb || selection.caja_fotos || selection.redes_sociales || selection.descartada;
 
         const card = document.createElement('div');
         card.className = 'photo-card';
@@ -135,9 +146,9 @@ function renderGallery() {
             card.classList.add('has-descartada');
         } else {
             const categories = [];
-            if (selection.ampliacion) categories.push('ampliacion');
             if (selection.impresion) categories.push('impresion');
-            if (selection.invitacion) categories.push('invitacion');
+            if (selection.caja_usb) categories.push('caja_usb');
+            if (selection.caja_fotos) categories.push('caja_fotos');
             if (selection.redes_sociales) categories.push('redes_sociales');
 
             if (categories.length > 1) {
@@ -151,10 +162,10 @@ function renderGallery() {
         let badgesHTML = '';
         if (hasAny) {
             badgesHTML = '<div class="photo-badges">';
-            if (selection.ampliacion) badgesHTML += '<span class="badge badge-ampliacion">🖼️ Ampliación</span>';
             if (selection.impresion) badgesHTML += '<span class="badge badge-impresion">📸 Impresión</span>';
+            if (selection.caja_usb) badgesHTML += '<span class="badge badge-caja-usb">💾 Caja USB</span>';
+            if (selection.caja_fotos) badgesHTML += '<span class="badge badge-caja-fotos">📦 Caja Fotos</span>';
             if (selection.redes_sociales) badgesHTML += '<span class="badge badge-redes-sociales">📱 Redes Sociales</span>';
-            if (selection.invitacion) badgesHTML += '<span class="badge badge-invitacion">💌 Invitación</span>';
             if (selection.descartada) badgesHTML += '<span class="badge badge-descartada">❌ Descartada</span>';
             badgesHTML += '</div>';
         }
@@ -185,23 +196,23 @@ function isPhotoVisible(index) {
         case 'all':
             show = true;
             break;
-        case 'ampliacion':
-            show = selection.ampliacion === true;
-            break;
         case 'impresion':
             show = selection.impresion === true;
             break;
+        case 'caja-usb':
+            show = selection.caja_usb === true;
+            break;
+        case 'caja-fotos':
+            show = selection.caja_fotos === true;
+            break;
         case 'redes-sociales':
             show = selection.redes_sociales === true;
-            break;
-        case 'invitacion':
-            show = selection.invitacion === true;
             break;
         case 'descartada':
             show = selection.descartada === true;
             break;
         case 'sin-clasificar':
-            show = !selection.ampliacion && !selection.impresion && !selection.redes_sociales && !selection.invitacion && !selection.descartada;
+            show = !selection.impresion && !selection.caja_usb && !selection.caja_fotos && !selection.redes_sociales && !selection.descartada;
             break;
     }
     console.log(`isPhotoVisible(index: ${index}, currentFilter: ${currentFilter}) => ${show}`);
@@ -237,12 +248,10 @@ function updateFilterButtons() {
     const stats = getStats();
 
     document.getElementById('btnFilterAll').textContent = `Todas (${photos.length})`;
-    document.getElementById('btnFilterAmpliacion').textContent = `Ampliación (${stats.ampliacion}/${LIMITS.ampliacion})`;
     document.getElementById('btnFilterImpresion').textContent = `Impresión (${stats.impresion}/${LIMITS.impresion})`;
+    document.getElementById('btnFilterCajaUsb').textContent = `Caja USB (${stats.caja_usb}/${LIMITS.caja_usb})`;
+    document.getElementById('btnFilterCajaFotos').textContent = `Caja Fotos (${stats.caja_fotos}/${LIMITS.caja_fotos})`;
     document.getElementById('btnFilterRedesSociales').textContent = `Redes Sociales (${stats.redes_sociales})`;
-    // Hide invitacion button
-    const invitacionBtn = document.getElementById('btnFilterInvitacion');
-    if (invitacionBtn) invitacionBtn.style.display = 'none';
     document.getElementById('btnFilterDescartada').textContent = `Descartadas (${stats.descartada})`;
     document.getElementById('btnFilterSinClasificar').textContent = `Sin Clasificar (${stats.sinClasificar})`;
 }
@@ -450,14 +459,14 @@ function exportToJSON() {
 
     photos.forEach((photo, index) => {
         const selection = photoSelections[index];
-        if (selection && (selection.ampliacion || selection.impresion || selection.redes_sociales || selection.invitacion || selection.descartada)) {
+        if (selection && (selection.impresion || selection.caja_usb || selection.caja_fotos || selection.redes_sociales || selection.descartada)) {
             exportData.selecciones.push({
                 numero_foto: index + 1,
                 archivo: photo,
-                ampliacion: selection.ampliacion || false,
                 impresion: selection.impresion || false,
+                caja_usb: selection.caja_usb || false,
+                caja_fotos: selection.caja_fotos || false,
                 redes_sociales: selection.redes_sociales || false,
-                invitacion: selection.invitacion || false,
                 descartada: selection.descartada || false
             });
         }
@@ -480,19 +489,19 @@ function generateTextSummary() {
     summary += '═══════════════════════════════════════\n\n';
     summary += `📊 RESUMEN GENERAL:\n`;
     summary += `   Total de fotos: ${photos.length}\n`;
-    summary += `   🖼️  Para ampliación: ${stats.ampliacion}\n`;
     summary += `   📸 Para impresión: ${stats.impresion}\n`;
+    summary += `   💾 Para Caja USB: ${stats.caja_usb}\n`;
+    summary += `   📦 Para Caja de Fotos: ${stats.caja_fotos}\n`;
     summary += `   📱 Para redes sociales: ${stats.redes_sociales}\n`;
-    summary += `   💌 Para invitación: ${stats.invitacion}\n`;
     summary += `   ❌ Descartadas: ${stats.descartada}\n`;
     summary += `   ⭕ Sin clasificar: ${stats.sinClasificar}\n\n`;
 
-    const categories = ['ampliacion', 'impresion', 'redes_sociales', 'invitacion', 'descartada'];
+    const categories = ['impresion', 'caja_usb', 'caja_fotos', 'redes_sociales', 'descartada'];
     const categoryNames = {
-        ampliacion: '🖼️  AMPLIACIÓN',
         impresion: '📸 IMPRESIÓN',
+        caja_usb: '💾 CAJA USB',
+        caja_fotos: '📦 CAJA DE FOTOS',
         redes_sociales: '📱 REDES SOCIALES',
-        invitacion: '💌 INVITACIÓN',
         descartada: '❌ DESCARTADAS'
     };
 
@@ -571,19 +580,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Filter buttons
     document.getElementById('btnFilterAll').addEventListener('click', () => setFilter('all'));
-    document.getElementById('btnFilterAmpliacion').addEventListener('click', () => setFilter('ampliacion'));
     document.getElementById('btnFilterImpresion').addEventListener('click', () => setFilter('impresion'));
+    document.getElementById('btnFilterCajaUsb').addEventListener('click', () => setFilter('caja-usb'));
+    document.getElementById('btnFilterCajaFotos').addEventListener('click', () => setFilter('caja-fotos'));
     document.getElementById('btnFilterRedesSociales').addEventListener('click', () => setFilter('redes-sociales'));
-    document.getElementById('btnFilterInvitacion').addEventListener('click', () => setFilter('invitacion'));
     document.getElementById('btnFilterDescartada').addEventListener('click', () => setFilter('descartada'));
     document.getElementById('btnFilterSinClasificar').addEventListener('click', () => setFilter('sin-clasificar'));
 
     // Set data-filter attributes
     document.getElementById('btnFilterAll').dataset.filter = 'all';
-    document.getElementById('btnFilterAmpliacion').dataset.filter = 'ampliacion';
     document.getElementById('btnFilterImpresion').dataset.filter = 'impresion';
+    document.getElementById('btnFilterCajaUsb').dataset.filter = 'caja-usb';
+    document.getElementById('btnFilterCajaFotos').dataset.filter = 'caja-fotos';
     document.getElementById('btnFilterRedesSociales').dataset.filter = 'redes-sociales';
-    document.getElementById('btnFilterInvitacion').dataset.filter = 'invitacion';
     document.getElementById('btnFilterDescartada').dataset.filter = 'descartada';
     document.getElementById('btnFilterSinClasificar').dataset.filter = 'sin-clasificar';
 
@@ -605,12 +614,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             const category = btn.dataset.category;
             const isCurrentlySelected = btn.classList.contains('selected');
-
-            // Skip invitacion - not available for Valentina
-            if (category === 'invitacion') {
-                showToast('La opción de invitación no está disponible para este paquete', 'error');
-                return;
-            }
 
             // If selecting descartada, deselect all others
             if (category === 'descartada' && !isCurrentlySelected) {
@@ -634,7 +637,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (futureCount > LIMITS[category]) {
                     const messages = {
                         impresion: `⚠️ Nota: Has seleccionado ${futureCount} fotos para impresión (se recomiendan ${LIMITS.impresion})`,
-                        ampliacion: `⚠️ Nota: Has seleccionado ${futureCount} fotos para ampliación (se recomienda ${LIMITS.ampliacion})`
+                        caja_usb: `⚠️ Nota: Has seleccionado ${futureCount} fotos para Caja USB (se recomienda ${LIMITS.caja_usb})`,
+                        caja_fotos: `⚠️ Nota: Has seleccionado ${futureCount} fotos para Caja de Fotos (se recomienda ${LIMITS.caja_fotos})`
                     };
                     showToast(messages[category], 'warning');
                 }

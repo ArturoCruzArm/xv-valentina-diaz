@@ -2,9 +2,10 @@
    VARIABLES
    ======================================== */
 :root {
-    --color-ampliacion: #8b4789;
     --color-impresion: #2196f3;
-    --color-invitacion: #e91e63;
+    --color-caja-usb: #9c27b0;
+    --color-caja-fotos: #ff9800;
+    --color-redes-sociales: #4caf50;
     --color-descartada: #f44336;
     --color-sin-clasificar: #9e9e9e;
 
@@ -103,19 +104,19 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
-.stat-card.ampliacion {
-    border-color: var(--color-ampliacion);
-    background: linear-gradient(135deg, rgba(139, 71, 137, 0.05), white);
-}
-
 .stat-card.impresion {
     border-color: var(--color-impresion);
     background: linear-gradient(135deg, rgba(33, 150, 243, 0.05), white);
 }
 
-.stat-card.invitacion {
-    border-color: var(--color-invitacion);
-    background: linear-gradient(135deg, rgba(233, 30, 99, 0.05), white);
+.stat-card.caja-usb {
+    border-color: var(--color-caja-usb);
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.05), white);
+}
+
+.stat-card.caja-fotos {
+    border-color: var(--color-caja-fotos);
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.05), white);
 }
 
 .stat-card.descartada {
@@ -189,19 +190,19 @@ body {
     border-color: var(--primary-color);
 }
 
-.filter-ampliacion.active {
-    background: var(--color-ampliacion);
-    border-color: var(--color-ampliacion);
-}
-
 .filter-impresion.active {
     background: var(--color-impresion);
     border-color: var(--color-impresion);
 }
 
-.filter-invitacion.active {
-    background: var(--color-invitacion);
-    border-color: var(--color-invitacion);
+.filter-caja-usb.active {
+    background: var(--color-caja-usb);
+    border-color: var(--color-caja-usb);
+}
+
+.filter-caja-fotos.active {
+    background: var(--color-caja-fotos);
+    border-color: var(--color-caja-fotos);
 }
 
 .filter-descartada.active {
@@ -280,16 +281,20 @@ body {
     display: none;
 }
 
-.photo-card.has-ampliacion {
-    border-color: var(--color-ampliacion);
-}
-
 .photo-card.has-impresion {
     border-color: var(--color-impresion);
 }
 
-.photo-card.has-invitacion {
-    border-color: var(--color-invitacion);
+.photo-card.has-caja_usb {
+    border-color: var(--color-caja-usb);
+}
+
+.photo-card.has-caja_fotos {
+    border-color: var(--color-caja-fotos);
+}
+
+.photo-card.has-redes_sociales {
+    border-color: var(--color-redes-sociales);
 }
 
 .photo-card.has-descartada {
@@ -298,7 +303,7 @@ body {
 }
 
 .photo-card.has-multiple {
-    border-image: linear-gradient(135deg, var(--color-ampliacion), var(--color-impresion), var(--color-invitacion)) 1;
+    border-image: linear-gradient(135deg, var(--color-impresion), var(--color-caja-usb), var(--color-caja-fotos)) 1;
 }
 
 .photo-image-container {
@@ -348,38 +353,38 @@ body {
     color: white;
 }
 
-.badge-ampliacion {
-    background: var(--color-ampliacion);
-}
-
 .badge-impresion {
     background: var(--color-impresion);
 }
 
-.badge-invitacion {
-    background: var(--color-invitacion);
+.badge-caja-usb {
+    background: var(--color-caja-usb);
+}
+
+.badge-caja-fotos {
+    background: var(--color-caja-fotos);
+}
+
+.badge-redes-sociales {
+    background: var(--color-redes-sociales);
 }
 
 .badge-descartada {
     background: var(--color-descartada);
 }
 
-.badge-redes-sociales {
-    background: #4caf50;
-}
-
 .stat-card.redes-sociales {
-    border-color: #4caf50;
+    border-color: var(--color-redes-sociales);
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.05), white);
 }
 
 .filter-redes-sociales.active {
-    background: #4caf50;
-    border-color: #4caf50;
+    background: var(--color-redes-sociales);
+    border-color: var(--color-redes-sociales);
 }
 
 .option-btn.redes-sociales.selected {
-    border-color: #4caf50;
+    border-color: var(--color-redes-sociales);
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), white);
 }
 
@@ -601,19 +606,19 @@ body {
     opacity: 1;
 }
 
-.option-btn.ampliacion.selected {
-    border-color: var(--color-ampliacion);
-    background: linear-gradient(135deg, rgba(139, 71, 137, 0.1), white);
-}
-
 .option-btn.impresion.selected {
     border-color: var(--color-impresion);
     background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), white);
 }
 
-.option-btn.invitacion.selected {
-    border-color: var(--color-invitacion);
-    background: linear-gradient(135deg, rgba(233, 30, 99, 0.1), white);
+.option-btn.caja-usb.selected {
+    border-color: var(--color-caja-usb);
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), white);
+}
+
+.option-btn.caja-fotos.selected {
+    border-color: var(--color-caja-fotos);
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), white);
 }
 
 .option-btn.descartada.selected {
